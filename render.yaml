@@ -14,6 +14,12 @@ services:
         value: https://testexcellaravel.onrender.com
       - key: LOG_CHANNEL
         value: stderr
+      - key: SESSION_DRIVER
+        value: file
+      - key: CACHE_STORE
+        value: file
+      - key: QUEUE_CONNECTION
+        value: sync
       - key: WEBDAV_USER
         value: webdav
       - key: WEBDAV_PASS
