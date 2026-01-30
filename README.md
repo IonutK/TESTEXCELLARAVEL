@@ -28,8 +28,9 @@ Luego abre la aplicación en tu navegador y usa el botón **Abrir en Excel**.
 ## Despliegue rápido en Render (free)
 1. Sube este proyecto a GitHub.
 2. En Render, crea un **New Web Service** y conecta el repositorio.
-3. Render detectará `render.yaml` y usará los comandos de build/arranque automáticamente.
-4. Cuando termine, abre la URL pública (HTTPS) y prueba el botón **Abrir en Excel**.
+3. En el selector de runtime, elige **Docker**.
+4. Render detectará `render.yaml` y `Dockerfile`.
+5. Cuando termine, abre la URL pública (HTTPS) y prueba el botón **Abrir en Excel**.
 
 ### Nota importante sobre almacenamiento
 En Render free el sistema de archivos es efímero. Los cambios en `storage/app/webdav` pueden perderse al reiniciar.
