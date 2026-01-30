@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: testexcellaravel
+    runtime: php
+    plan: free
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+      npm ci
+      npm run build
+      php artisan optimize
+      php artisan storage:link
+    startCommand: php -S 0.0.0.0:$PORT -t public
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_URL
+        value: https://testexcellaravel.onrender.com
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: WEBDAV_USER
+        value: webdav
+      - key: WEBDAV_PASS
+        value: secret
